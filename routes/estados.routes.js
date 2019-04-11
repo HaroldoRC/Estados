@@ -4,7 +4,8 @@ const states = require('../models/estado.model')
 
 /* All statess */
 router.get('/', async (req, res) => {
-    await states.getStatesPopulation()
+    await states.getStates()
+    //await states.getStatesPopulation()
     .then(states => res.json({estados: states, success: true}))
     .catch(err => {
         if (err.status) {
